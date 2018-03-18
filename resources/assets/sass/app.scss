@@ -1,0 +1,26 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.inputHolder {
+  margin: 5px 5px 5px 5px;
+}
+
+#mainSqft, #SecondSqft, #basementSqft {
+  width: 63px;
+}
+
+.createHomeLabel {
+  margin: 0px 5px 0px 5px;
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
