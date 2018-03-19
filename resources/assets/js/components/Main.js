@@ -52,7 +52,7 @@ class Main extends Component {
 
     findHome() {
         /* fetch API in action */
-        fetch(`/api/homes/${this.state.address}/`)
+        fetch(`/homes/${this.state.address}/`)
         .then(response => {
             return response.json();
         })
@@ -63,12 +63,14 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        fetch('/api/homes/').
+        fetch('/homes/').
         then(response => {
+            console.log("Database call", response.json());
             return response.json();
         }).
         then(homes => {
-            this.setState( {homes} );
+            console.log("Completed: ", homes);
+            //this.setState( {homes} );
         });
     }
     
