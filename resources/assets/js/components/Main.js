@@ -63,7 +63,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        fetch('/homes/').
+        fetch('https://whispering-headland-12986.herokuapp.com/homes').
         then(response => {
             console.log("Database call", response);
             return response.json();
