@@ -90,20 +90,21 @@ class HomeCard extends Component
                                     </Col>
                                 </React.Fragment>
                             );
-                        }).reduce((r, element, index) => {
-
-                            if (index % groupSize === 0) rows.push([]);
-                            if (rows.length != 0)
-                                rows[rows.length - 1].push(element);
-                            return rows;
-                        }).map((columns, key) => {
-                            return (
-                            <React.Fragment key={key}>
-                                <Row style={{marginTop: '20px'}}>{columns}</Row>
-                                {'   '}
-                            </React.Fragment>
-                        );
                         }) : null
+                        // }).reduce((r, element, index) => {
+
+                        //     if (index % groupSize === 0) rows.push([]);
+                        //     if (rows.length != 0)
+                        //         rows[rows.length - 1].push(element);
+                        //     return rows;
+                        // }).map((columns, key) => {
+                        //     return (
+                        //     <React.Fragment key={key}>
+                        //         <Row style={{marginTop: '20px'}}>{columns}</Row>
+                        //         {'   '}
+                        //     </React.Fragment>
+                        // );
+                        // }) : null
                     }
                 </CardDeck>
                 {/* <Modal cssModule={JumboStyle} isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={this.state.backdrop}>
