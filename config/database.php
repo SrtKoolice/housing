@@ -37,14 +37,13 @@ return [
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
         ],
-        
         'mongodb' => [
             'driver'   => 'mongodb',
-            'host'     => env('DB_HOST', 'localhost'),
-            'port'     => env('DB_PORT', 27017),
-            'database' => env('DB_DATABASE', 'homestead'),
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
+            'host'     => env('DB_HOST', 'ds117509.mlab.com'),
+            'port'     => env('DB_PORT', 17509),
+            'database' => env('DB_DATABASE', 'heroku_nts6nzft'),
+            'username' => env('DB_USERNAME', 'dlee36'),
+            'password' => env('DB_PASSWORD', 'M0nk3y12'),
             'options'  => [
                 'database' => 'admin' // sets the authentication database required by mongo 3
             ]
