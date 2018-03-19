@@ -42,8 +42,8 @@ return [
             'host'     => env('DB_HOST', 'ds117509.mlab.com'),
             'port'     => env('DB_PORT', 17509),
             'database' => env('DB_DATABASE', 'heroku_nts6nzft'),
-            'username' => env('DB_USERNAME', 'dlee36'),
-            'password' => env('DB_PASSWORD', 'M0nk3y12'),
+            'username' => env('MONGO_USERNAME', 'dlee36'),
+            'password' => env('MONGO_PASSWORD', 'M0nk3y12'),
             'options'  => [
                 'database' => 'admin' // sets the authentication database required by mongo 3
             ]
