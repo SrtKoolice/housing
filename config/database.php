@@ -37,18 +37,37 @@ return [
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
         ],
+        // 'mongodb' => [
+        //     'driver'   => 'mongodb',
+        //     'username' => env('DB_USERNAME', 'dlee36'),
+        //     'password' => env('DB_PASSWORD', 'M0nk3y12'),
+        //     'host'     => env('DB_HOST', 'ds117509.mlab.com'),
+        //     'port'     => env('DB_PORT', '17509'),
+        //     'database' => env('DB_DATABASE', 'heroku_nts6nzft'),
+        //     'options'  => [
+        //         'database' =>  env('admin'), // sets the authentication database required by mongo 3
+        //     ]
+        // ],//mongodb://heroku_nts6nzft:atmmq9ffrf3h25qa1rq446tnsv@ds117509.mlab.com:17509/heroku_nts6nzft
         'mongodb' => [
             'driver'   => 'mongodb',
-            'host'     => env('DB_HOST', 'ds117509.mlab.com'),
-            'port'     => env('DB_PORT', 17509),
-            'database' => env('DB_DATABASE', 'heroku_nts6nzft'),
             'username' => env('DB_USERNAME', 'dlee36'),
             'password' => env('DB_PASSWORD', 'M0nk3y12'),
-            'options'  => [
-                'database' =>  env('DB_DATABASE') // sets the authentication database required by mongo 3
-            ]
+            'dsn' => env('DB_DSN'),
+            'port' => env('DB_PORT', 17509),
+            'host'=> env('DB_HOST', 'dlee36:M0nk3y12@ds117509.mlab.com:17509/heroku_nts6nzft'),
+            'database' => env('DB_DATABASE', 'heroku_nts6nzft'),
         ],
-        
+        // 'mongodb' => [
+        //     'driver'   => 'mongodb',
+        //     'host'     => env('DB_HOST', '127.0.0.1'),
+        //     'port'     => env('DB_PORT', 27017),
+        //     'database' => env('DB_DATABASE', 'homestead'),
+        //     'username' => env('DB_USERNAME', ''),
+        //     'password' => env('DB_PASSWORD', ''),
+        //     'options'  => [
+        //         'database' =>  env('admin') // sets the authentication database required by mongo 3
+        //     ]
+        // ],
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
