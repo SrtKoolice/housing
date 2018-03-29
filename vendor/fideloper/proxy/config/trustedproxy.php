@@ -15,13 +15,13 @@ return [
      * of your proxy (e.g. if using ELB or similar).
      *
      */
-    'proxies' => null, // [<ip addresses>,], '*'
+    'proxies' => '*', // [<ip addresses>,], '*'
 
     /*
      * To trust one or more specific proxies that connect
      * directly to your server, use an array of IP addresses:
      */
-     # 'proxies' => ['192.168.1.1'],
+    'proxies' => '**',//['192.168.1.1'],
 
     /*
      * Or, to trust all proxies that connect
@@ -39,7 +39,9 @@ return [
      * 
      * @link https://symfony.com/doc/current/deployment/proxies.html
      */
-    'headers' => Illuminate\Http\Request::HEADER_X_FORWARDED_ALL,
+    'headers' => [
+        Illuminate\Http\Request::HEADER_X_FORWARDED_ALL,
+        Illuminate\Http\Request::HEADER_FORWARDED    => null, // not set on AWS or Heroku
 
-    
+    ],  
 ];
