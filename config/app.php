@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://whispering-headland-12986.herokuapp.com'),
 
     /*
     |--------------------------------------------------------------------------
