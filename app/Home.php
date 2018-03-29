@@ -10,6 +10,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Home extends Eloquent
 {
     protected $colletion = 'homes';
+    protected $connection = 'mongodb';
     protected $fillable = [ 'address',
                             //'img',
                             'totalCost', 
