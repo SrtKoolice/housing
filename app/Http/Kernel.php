@@ -37,7 +37,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 
             // Https redirect
-            \MyApp\Http\Middleware\HttpsProtocol::class,
+            \App\Http\Middleware\HttpsProtocol::class,
         ],
 
         'api' => [
