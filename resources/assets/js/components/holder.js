@@ -15,7 +15,7 @@ class Main extends Component {
     
     componentDidMount() {
         /* fetch API in action */
-        fetch('/homes')
+        fetch('/api/homes')
         .then(response => {
             return response.json();
         })

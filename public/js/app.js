@@ -19813,7 +19813,7 @@ var Main = function (_Component) {
             var _this2 = this;
 
             /* fetch API in action */
-            fetch('/homes/' + this.state.address + '/').then(function (response) {
+            fetch('/api/homes/' + this.state.address + '/').then(function (response) {
                 return response.json();
             }).then(function (home) {
                 //Fetched product is stored in the state
@@ -19825,7 +19825,7 @@ var Main = function (_Component) {
         value: function componentDidMount() {
             var _this3 = this;
 
-            fetch('/homes/').then(function (response) {
+            fetch('/api/homes/').then(function (response) {
                 console.log("Database call", response);
                 return response.json();
             }).then(function (homes) {
@@ -63058,7 +63058,7 @@ var HomeJumbo = function (_Component) {
 
             console.log("address", this.props.address);
             /* fetch API in action */
-            fetch('/homes/' + this.props.address + '/').then(function (response) {
+            fetch('/api/homes/' + this.props.address + '/').then(function (response) {
                 return response.json();
             }).then(function (home) {
                 //Fetched product is stored in the state
