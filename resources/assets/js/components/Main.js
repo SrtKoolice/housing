@@ -67,7 +67,11 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        fetch('/api/homes/').
+        fetch('/api/homes/', {
+            redirect: 'follow',
+            mode: 'cors',
+            credentials: 'same-origin',
+        }).
         then(response => {
             console.log("Database calls", response);
             return response.json();
