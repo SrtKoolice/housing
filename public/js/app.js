@@ -19826,7 +19826,7 @@ var Main = function (_Component) {
             var _this3 = this;
 
             fetch('/api/homes/').then(function (response) {
-                console.log("Database call", response);
+                console.log("Database calls", response);
                 return response.json();
             }).then(function (homes) {
                 console.log("Completed: ", homes);

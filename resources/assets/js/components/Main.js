@@ -65,7 +65,7 @@ class Main extends Component {
     componentDidMount() {
         fetch('/api/homes/').
         then(response => {
-            console.log("Database call", response);
+            console.log("Database calls", response);
             return response.json();
         }).
         then(homes => {
