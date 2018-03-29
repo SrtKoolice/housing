@@ -63,7 +63,7 @@ class Main extends Component {
         .then(home => {
             //Fetched product is stored in the state
             this.setState({ home });
-        });
+        }).catch((error) => console.log("Error from fetch: ", error));
     }
 
     componentDidMount() {
