@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Home;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use MongoDB\Driver;
 
 use Illuminate\Routing\Controller as BaseController;
 
