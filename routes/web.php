@@ -12,7 +12,7 @@
 */
 //Route::get('address', 'Controller@show');
 
-Route::resource('homes', 'HomesController');
+//Route::resource('homes', 'HomesController');
 Route::get('/', function () {
     return view('welcome');
 });

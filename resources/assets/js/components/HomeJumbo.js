@@ -16,7 +16,7 @@ class HomeJumbo extends Component
     componentDidMount(){
         console.log("address", this.props.address);
         /* fetch API in action */
-        fetch(`/homes/${this.props.address}/`)
+        fetch(`/api/homes/${this.props.address}/`)
         .then(response => {
             return response.json();
         })
