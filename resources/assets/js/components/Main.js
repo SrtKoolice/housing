@@ -63,7 +63,7 @@ class Main extends Component {
         .then(home => {
             //Fetched product is stored in the state
             this.setState({ home });
-        }).catch((error) => console.log("Error from fetch: ", error));
+        });
     }
 
     componentDidMount() {
@@ -75,7 +75,7 @@ class Main extends Component {
         then(homes => {
             console.log("Completed: ", homes);
             this.setState( {homes} );
-        });
+        }).catch((error) => console.log("Error from fetch: ", error));
     }
     
     updateHome(e) {
