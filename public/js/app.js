@@ -19762,6 +19762,8 @@ var modalStyle = {
     }
 };
 
+var URL = "https://whispering-headland-12986.herokuapp.com/";
+
 /* Main React component */
 
 var Main = function (_Component) {
@@ -19825,7 +19827,7 @@ var Main = function (_Component) {
         value: function componentDidMount() {
             var _this3 = this;
 
-            fetch('/api/homes/').then(function (response) {
+            fetch(URL + 'api/homes/').then(function (response) {
                 console.log("Database calls", response);
                 return response.json();
             }).then(function (homes) {
