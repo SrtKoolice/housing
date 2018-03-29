@@ -23,6 +23,6 @@ Route::put('homes/{home}', 'HomesController@update');
 
 Route::delete('homes/{home}', 'HomesController@delete');
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
