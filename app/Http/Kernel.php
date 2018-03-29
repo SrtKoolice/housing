@@ -19,7 +19,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
-        \App\Http\Middleware\HttpsProtocol::class,
+        //\App\Http\Middleware\HttpsProtocol::class,
     ];
 
     /**
@@ -38,7 +38,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 
             // Https redirect
-           // \App\Http\Middleware\HttpsProtocol::class,
+            \App\Http\Middleware\HttpsProtocol::class,
         ],
 
         'api' => [
