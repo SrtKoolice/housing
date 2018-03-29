@@ -14,8 +14,6 @@ const modalStyle = {
       transform             : 'translate(-50%, -50%)'
     }
   };
-
-  let URL = "https://whispering-headland-12986.herokuapp.com/";
  
 /* Main React component */
 class Main extends Component {
@@ -54,7 +52,11 @@ class Main extends Component {
 
     findHome() {
         /* fetch API in action */
-        fetch(`/api/homes/${this.state.address}/`)
+        fetch(`/api/homes/${this.state.address}/`, {
+            redirect: 'follow',
+            mode: 'cors',
+            credentials: 'same-origin',
+        })
         .then(response => {
             return response.json();
         })
@@ -65,7 +67,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        fetch(URL + 'api/homes/').
+        fetch('/api/homes/').
         then(response => {
             console.log("Database calls", response);
             return response.json();

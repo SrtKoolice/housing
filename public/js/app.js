@@ -19762,8 +19762,6 @@ var modalStyle = {
     }
 };
 
-var URL = "https://whispering-headland-12986.herokuapp.com/";
-
 /* Main React component */
 
 var Main = function (_Component) {
@@ -19815,7 +19813,11 @@ var Main = function (_Component) {
             var _this2 = this;
 
             /* fetch API in action */
-            fetch('/api/homes/' + this.state.address + '/').then(function (response) {
+            fetch('/api/homes/' + this.state.address + '/', {
+                redirect: 'follow',
+                mode: 'cors',
+                credentials: 'same-origin'
+            }).then(function (response) {
                 return response.json();
             }).then(function (home) {
                 //Fetched product is stored in the state
@@ -19827,7 +19829,7 @@ var Main = function (_Component) {
         value: function componentDidMount() {
             var _this3 = this;
 
-            fetch(URL + 'api/homes/').then(function (response) {
+            fetch('/api/homes/').then(function (response) {
                 console.log("Database calls", response);
                 return response.json();
             }).then(function (homes) {
