@@ -82,7 +82,7 @@ class Main extends Component {
         then(homes => {
             console.log("Completed: ", homes);
             this.setState( {homes} );
-        }).catch((error) => console.log("Error from fetch: ", error));
+        }).catch((error) => console.log("Error from fetch: ", error.error));
     }
     
     updateHome(e) {
