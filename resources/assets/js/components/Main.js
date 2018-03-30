@@ -69,7 +69,7 @@ class Main extends Component {
     componentDidMount() {
         fetch('/api/homes/', {
             redirect: 'follow',
-            mode: 'cors',
+            mode: 'no-cors',
         }).
         then(response => {
             console.log("Database calls", response);
