@@ -67,6 +67,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
+        console.log("Updated");
         fetch('/api/homes/', {
             redirect: 'follow',
             mode: 'no-cors',
