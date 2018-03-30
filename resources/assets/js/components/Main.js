@@ -70,7 +70,10 @@ class Main extends Component {
         console.log("Updated");
         fetch('/api/homes/', {
             redirect: 'follow',
-            mode: 'no-cors',
+            mode: 'cors',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+              },
         }).
         then(response => {
             console.log("Database calls", response);

@@ -19832,7 +19832,10 @@ var Main = function (_Component) {
             console.log("Updated");
             fetch('/api/homes/', {
                 redirect: 'follow',
-                mode: 'no-cors'
+                mode: 'cors',
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                }
             }).then(function (response) {
                 console.log("Database calls", response);
                 return response.json();
