@@ -54,6 +54,7 @@ class Main extends Component {
         /* fetch API in action */
         fetch(`/api/homes/${this.state.address}/`, {
             redirect: 'follow',
+            mode: 'cors',
             credentials: 'same-origin',
         })
         .then(response => {
@@ -68,7 +69,7 @@ class Main extends Component {
     componentDidMount() {
         fetch('/api/homes/', {
             redirect: 'follow',
-            credentials: 'same-origin',
+            mode: 'cors',
         }).
         then(response => {
             console.log("Database calls", response);
