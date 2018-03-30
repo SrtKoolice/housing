@@ -19829,12 +19829,18 @@ var Main = function (_Component) {
         value: function componentDidMount() {
             var _this3 = this;
 
-            fetch('/api/homes/').then(function (response) {
+            console.log("Updated");
+            fetch('/api/homes/', {
+                redirect: 'follow',
+                mode: 'no-cors'
+            }).then(function (response) {
                 console.log("Database calls", response);
                 return response.json();
             }).then(function (homes) {
                 console.log("Completed: ", homes);
                 _this3.setState({ homes: homes });
+            }).catch(function (error) {
+                return console.log("Error from fetch: ", error);
             });
         }
     }, {
