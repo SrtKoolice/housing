@@ -19843,7 +19843,7 @@ var Main = function (_Component) {
                 console.log("Completed: ", homes);
                 _this3.setState({ homes: homes });
             }).catch(function (error) {
-                return console.log("Error from fetch: ", error);
+                return console.log("Error from fetch: ", error.error);
             });
         }
     }, {
