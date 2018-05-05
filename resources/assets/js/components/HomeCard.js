@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { Row, Col, CardDeck, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import Modal from 'react-modal'
 import HomeJumbo from './HomeJumbo';
+import phil from '../../images/no-home.jpg';
 
 const JumboStyle = {
     content : {
+      padding               : '0px 20px 20px 20px',
       height                : '95%',
       width                 : '95%',
       top                   : '50%',
@@ -78,7 +80,7 @@ class HomeCard extends Component
                                 <React.Fragment key={key}>
                                     <Col sm="4">
                                         <Card>
-                                            <CardImg top width="100%" src={home.img} alt="Card image cap" />
+                                            <CardImg top width="100%" src={home.imgs == "" ? phil : home.imgs} alt="Card image cap" />
                                             <CardBody>
                                             <CardTitle>{home.address}</CardTitle>
                                             <br/>

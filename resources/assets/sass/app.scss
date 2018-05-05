@@ -24,3 +24,37 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+#jumbo-header {
+  z-index: 50;
+  top: 0px;
+  padding-top: 20px;
+  position: sticky;
+  background: white;
+  min-height: 250px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.inputGroup {
+  z-index: -1;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  
+}
+
+.flex-item {
+  margin: .5em 1em 0 1em;
+  //flex-grow: 1;
+  //flex-shrink: 1;
+}
+
+label {
+  margin-bottom: 0;
+}

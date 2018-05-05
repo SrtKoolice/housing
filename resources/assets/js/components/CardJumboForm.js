@@ -1,81 +1,109 @@
 import React, {Component} from 'react';
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Col,
+  Button, Form,
+  FormGroup,
+  Label, Input,
+  FormText, InputGroup,
+  InputGroupButtonDropdown,
+  DropdownToggle, DropdownMenu,
+  DropdownItem,
+  InputGroupAddon, InputGroupText } from 'reactstrap';
+  import ImagesUploader from 'react-images-uploader';
+  import 'react-images-uploader/styles.css';
+  import 'react-images-uploader/font.css';
 
 class CardJumboForm extends Component
 {
     constructor(props){
         super(props);
+
+        this.state = {
+          dropdownOpen: false,
+          splitButtonOpen: false
+        };
+
+        this.toggleDropDown = this.toggleDropDown.bind(this);
+        this.toggleSplit = this.toggleSplit.bind(this);
+    }
+
+    toggleDropDown() {
+      this.setState({
+        dropdownOpen: !this.state.dropdownOpen
+      });
+    }
+  
+    toggleSplit() {
+      this.setState({
+        splitButtonOpen: !this.state.splitButtonOpen
+      });
     }
 
     render() {
         return(
             <Form>
-            <FormGroup>
-              <Label for="exampleEmail">Email</Label>
-              <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+            <FormGroup check inline>
+              <Label for="exampleSelect">Holding Costs</Label>
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>$</InputGroupText>
+                </InputGroupAddon>
+                <Input placeholder="Dolla dolla billz nigga!"/>
+                <InputGroupButtonDropdown addonType="append" isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
+                  <DropdownToggle caret>
+                    Month
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem>Janurary</DropdownItem>
+                    <DropdownItem>February</DropdownItem>
+                    <DropdownItem>March</DropdownItem>
+                    <DropdownItem>April</DropdownItem>
+                    <DropdownItem>May</DropdownItem>
+                    <DropdownItem>June</DropdownItem>
+                    <DropdownItem>July</DropdownItem>
+                    <DropdownItem>August</DropdownItem>
+                    <DropdownItem>September</DropdownItem>
+                    <DropdownItem>October</DropdownItem>
+                    <DropdownItem>September</DropdownItem>
+                    <DropdownItem>November</DropdownItem>
+                    <DropdownItem>December</DropdownItem>
+                  </DropdownMenu>
+                </InputGroupButtonDropdown>
+              </InputGroup>
+            </FormGroup>
+           
+            <FormGroup check inline>
+              <Label for="realtorFees">Realtor Fees</Label>
+              <InputGroupAddon addonType="prepend">
+                  <InputGroupText>$</InputGroupText>
+                </InputGroupAddon>
+              <Input id="realtorFees"  readOnly/>
+            </FormGroup>
+            {' '}
+            <FormGroup check inline>
+              <Label for="renoCost">Reno Cost</Label>
+              <InputGroupAddon addonType="prepend">
+                  <InputGroupText>$</InputGroupText>
+                </InputGroupAddon>
+              <Input id="renoCost" readOnly />
             </FormGroup>
             <FormGroup>
-              <Label for="examplePassword">Password</Label>
-              <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-            </FormGroup>
-            <FormGroup>
-              <Label for="exampleSelect">Select</Label>
-              <Input type="select" name="select" id="exampleSelect">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Input>
-            </FormGroup>
-            <FormGroup>
-              <Label for="exampleSelectMulti">Select Multiple</Label>
-              <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Input>
-            </FormGroup>
-            <FormGroup>
-              <Label for="exampleText">Text Area</Label>
-              <Input type="textarea" name="text" id="exampleText" />
-            </FormGroup>
-            <FormGroup>
-              <Label for="exampleFile">File</Label>
-              <Input type="file" name="file" id="exampleFile" />
+              <Label for="file">File</Label>
+              <ImagesUploader
+                optimisticPreviews
+                onLoadEnd={(err) => {
+                    if (err) {
+                        console.error(err);
+                    }
+                }}
+                label="Upload multiple images"
+                />
               <FormText color="muted">
-                This is some placeholder block-level help text for the above input.
-                It's a bit lighter and easily wraps to a new line.
+                upload home image
               </FormText>
             </FormGroup>
-            <FormGroup tag="fieldset">
-              <legend>Radio Buttons</legend>
-              <FormGroup check>
-                <Label check>
-                  <Input type="radio" name="radio1" />{' '}
-                  Option one is this and that—be sure to include why it's great
-                </Label>
-              </FormGroup>
-              <FormGroup check>
-                <Label check>
-                  <Input type="radio" name="radio1" />{' '}
-                  Option two can be something else and selecting it will deselect option one
-                </Label>
-              </FormGroup>
-              <FormGroup check disabled>
-                <Label check>
-                  <Input type="radio" name="radio1" disabled />{' '}
-                  Option three is disabled
-                </Label>
-              </FormGroup>
-            </FormGroup>
-            <FormGroup check>
-              <Label check>
-                <Input type="checkbox" />{' '}
-                Check me out
-              </Label>
+            <FormGroup >
+              <Label for="description">Description</Label>
+              <Input type="textarea" name="description" />
             </FormGroup>
             <Button>Submit</Button>
           </Form>
