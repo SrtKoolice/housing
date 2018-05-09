@@ -10014,3 +10014,44 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+#jumbo-header {
+  z-index: 50;
+  top: 0px;
+  padding-top: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  background: white;
+  min-height: 250px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.inputGroup {
+  z-index: -1;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-item {
+  margin: .5em 1em 0 1em;
+}
+
+label {
+  margin-bottom: 0;
+}
+
